@@ -1,0 +1,179 @@
+\DocumentMetadata{
+  lang          = en-US,
+  pdfstandard   = {UA-2,A-4F},
+  tagging       = on,
+  tagging-setup = {
+    math/setup = mathml-SE,
+    table/header-rows = 1
+  },
+}
+\AddToDocumentProperties[hyperref]{pdftitle}{Title of Thesis/Dissertation}
+\AddToDocumentProperties[hyperref]{pdfauthor}{First Middle Initial Last Name}
+\AddToDocumentProperties[hyperref]{pdfsubject}{Master’s Thesis}
+\AddToDocumentProperties[hyperref]{pdfkeywords}{keyword, keywords}
+\documentclass[letterpaper, 12pt, leqno]{article}
+
+\title{Title of Thesis/Dissertation}
+\author{First Middle Initial Last Name}
+\date{Spring 2026}
+
+
+\usepackage[margin=1in, footskip=0.5in, nohead]{geometry}
+\usepackage[doublespacing]{setspace}
+\usepackage{sectsty}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tikz-cd}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{unicode-math}
+\usepackage[pagebackref, linktoc=all, bookmarksnumbered=true, hidelinks]{hyperref}
+\usepackage[alphabetic, backrefs, msc-links, nobysame]{amsrefs}
+
+
+\tikzset{commutative diagrams/diagrams={ampersand replacement=\&}}
+\AddToHook{env/tikzcd/begin}{\MathCollectFalse}
+\allsectionsfont{\centering\scshape\mdseries\large}
+\RenewExpandableDocumentCommand\contentsname{}{Table of Contents}
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname. }
+\RenewDocumentCommand\maketitle{mmmo}{%
+  \thispagestyle{empty}
+  \vspace*{2\baselineskip}
+  \begin{center}
+  {\large\textbf{\@title}}\\[2\baselineskip]
+  by\\[2\baselineskip]
+  \textbf{\@author}\\\vfill
+  A #1\\
+  Submitted to the University at Albany, State University of New York\\
+  In Partial Fulfillment of\\
+  the Requirements for the Degree of\\
+  #2\\\vfill
+  #3\\
+  \IfBlankF{#4}{#4\\}
+  \@date\\[2\baselineskip]
+  \end{center}
+}
+\makeatother
+
+
+\NewDocumentCommand\DOI  {m}{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+\NewDocumentCommand\Zbl  {m}{Zbl~\href{https://zbmath.org/?q=an\%3A#1}{#1}}
+\NewDocumentCommand\arXiv{m}{\href{https://www.arxiv.org/abs/#1}{\nolinkurl{arXiv:#1}}}
+
+
+\numberwithin{equation}{section}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{warning}[equation]{Warning}
+
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\maketitle{Thesis}{Master of Arts}{College of Arts \& Sciences}[Department of Mathematics \& Statistics]
+
+
+\newpage
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+\newpage
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+
+\citelist{\cite{MO} \cite{PP}}.
+
+
+\newpage
+\begin{onehalfspace}
+\tableofcontents
+\end{onehalfspace}
+\addcontentsline{toc}{section}{\contentsname}
+
+
+\newpage
+\pagenumbering{arabic}
+\section{Introduction}
+
+\begin{theorem}
+The following cube commutes in~$\symcal{S}$.
+\begin{equation}
+\begin{tikzcd}[alt=a commutative cube, row sep=scriptsize, column sep=scriptsize]
+\& X_0 \arrow[rr] \arrow[dl] \arrow[dd] \& \& X_1 \arrow[dl] \arrow[dd] \\
+X_2 \arrow[rr, crossing over] \arrow[dd] \& \& X_{12} \\
+\& X_3 \arrow[rr] \arrow[dl] \& \& X_{13} \arrow[dl] \\
+X_{23} \arrow[rr] \& \& X_{123} \arrow[from=uu, crossing over]
+\end{tikzcd}
+\end{equation}
+\end{theorem}
+
+\begin{warning}
+\ldots!
+\end{warning}
+
+
+\newpage
+\section{Etaoin Shrdlu}
+
+\includegraphics[alt={A rainbow over UAlbany’s main fountain (photo by Marco Varisco)}, width=\textwidth]{rainbow.jpg}\bigskip
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+Name & Value \\
+\midrule
+This & 11 \\
+That &  2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+\newpage
+\begin{bibdiv}
+\begin{biblist}
+\addcontentsline{toc}{section}{\refname}
+
+\bib{PP}{article}{
+   author={Thurston, William P.},
+   title={On proof and progress in mathematics},
+   journal={Bull. Amer. Math. Soc. (N.S.)},
+   volume={30},
+   date={1994},
+   number={2},
+   pages={161--177},
+   issn={0273-0979},
+   review={\MR{1249357} \Zbl{0817.01031}},
+   doi={\DOI{10.1090/S0273-0979-1994-00502-6}},
+}
+
+\bib{MO}{webpage}{
+   author={Thurston, William P.},
+   title={What's a mathematician to do?},
+   date={2010-10-30},
+   accessdate={2026-05-15},
+   note={\href{https://mathoverflow.net/a/44213/21636}{\nolinkurl{mathoverflow.net/a/44213/21636}}},
+}
+
+\end{biblist}
+\end{bibdiv}
+
+
+\end{document}
